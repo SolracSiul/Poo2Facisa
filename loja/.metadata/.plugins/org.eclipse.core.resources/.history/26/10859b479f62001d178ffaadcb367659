@@ -1,0 +1,8 @@
+package main;
+
+import java.util.Scanner;
+
+public class Loja {
+	private static Scanner teclado = new Scanner(System.in);
+
+}

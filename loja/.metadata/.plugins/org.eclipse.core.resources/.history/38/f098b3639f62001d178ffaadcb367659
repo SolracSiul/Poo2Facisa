@@ -1,0 +1,13 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import models.Produto;
+
+public class Loja {
+	private static Scanner teclado = new Scanner(System.in);
+
+	private static ArrayList<Produto> produtos;
+	
+}
