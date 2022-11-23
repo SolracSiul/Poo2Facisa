@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
 import br.facisa.poo.loja.model.Celular;
 import br.facisa.poo.loja.model.Notebook;
+import br.facisa.poo.loja.model.Periferico;
 import br.facisa.poo.loja.model.Produto;
 import br.facisa.poo.loja.util.Utils;
 
@@ -19,6 +21,7 @@ public class Loja {
 		menu();
 	}
 	private static void menu() {
+		int opcao = 0;
 		System.out.println("----------------------------------");
 		System.out.println("----------Loja do Luis--------");
 		System.out.println("----------------------------------");
@@ -30,7 +33,13 @@ public class Loja {
 		System.out.println("| Opção 4 - Carrinho |");
 		System.out.println("| Opção 5 - Sair |");
 		
-		int opcao = Utils.leInt();
+		try {
+			opcao = Utils.leInt();
+		}catch(NumberFormatException e) {
+			System.out.println("Por favor, informe uma opção válida.");
+			Utils.pausar(1);
+			menu();
+		}
 		
 		switch(opcao) {
 			case 1:
@@ -82,11 +91,48 @@ public class Loja {
 				
 				Produto produto = new Celular(nome, preco, marca, armazenamentoInterno, memoriaRam);
 				produtos.add(produto);
+				System.out.println(produto);
+				Utils.pausar(1);
 				
 			}else if(tipoProduto == 2) {
 				System.out.println("Cadastrando um computador");
+				
+				System.out.println("Nome do produto: ");
+				String nome = Utils.leString();
+			
+				System.out.println("Preço do produto: ");
+				Double preco = Utils.leDouble();
+				
+				System.out.println("Marca do produto: ");
+				String marca = Utils.leString();
+				
+				System.out.println("Sistema operacional do produto: ");
+				String sistemaOperacional = Utils.leString();
+				
+				System.out.println("Memória ram do produto: ");
+				String memoriaRam = Utils.leString();
+				
+				Produto produto = new Notebook(nome, preco, marca, sistemaOperacional, memoriaRam);
+				produtos.add(produto);
+				System.out.println(produto);
+				Utils.pausar(1);
+				
 			}else if(tipoProduto == 3) {
 				System.out.println("Cadastrando um periferico");
+				System.out.println("Nome do produto: ");
+				String nome = Utils.leString();
+			
+				System.out.println("Preço do produto: ");
+				Double preco = Utils.leDouble();
+				
+				System.out.println("Marca do produto: ");
+				String marca = Utils.leString();
+				
+				Produto produto = new Periferico(nome, preco, marca);
+				produtos.add(produto);
+				System.out.println(produto);
+				Utils.pausar(1);
+				
 			}else if(tipoProduto == 4) {
 				System.out.println("Cadastrando um tipo genérico");
 	
@@ -96,7 +142,7 @@ public class Loja {
 				System.out.println("Preço do produto: ");
 				Double preco = Utils.leDouble();
 				
-				Produto produto = new Notebook(nome, preco);
+				Produto produto = new Produto(nome, preco);
 				produtos.add(produto);
 				System.out.println(produto);
 			}else {
@@ -115,7 +161,7 @@ public class Loja {
 		}else {
 			System.out.println("Nenhum produto cadastrado");
 		}
-		Utils.pausar(2);
+		Utils.pausar(5);
 		menu();
 	}
 	private static void comprarProdutos(){
@@ -150,6 +196,7 @@ public class Loja {
 					}
 				}else {
 					System.out.println("Produto não encontrado");
+					Utils.pausar(2);
 					menu();
 				}
 			}

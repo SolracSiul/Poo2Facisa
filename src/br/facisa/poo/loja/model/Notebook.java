@@ -5,6 +5,12 @@ import br.facisa.poo.loja.util.Utils;
 public class Notebook extends Produto{
 
 	
+	public Notebook(String nome, Double preco, String marca, String sistemaOperacional, String memoriaRam) {
+		super(nome, preco);
+		this.marca = marca;
+		this.sistemaOperacional = sistemaOperacional;
+		this.memoriaRam = memoriaRam;
+	}
 	public Notebook(String nome, Double preco) {
 		super(nome, preco);
 	}

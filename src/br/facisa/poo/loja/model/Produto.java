@@ -3,6 +3,7 @@ package br.facisa.poo.loja.model;
 import br.facisa.poo.loja.util.Utils;
 
 public class Produto {
+	
 	private static int count = 1;
 	
 	private int id;
