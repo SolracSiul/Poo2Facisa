@@ -1,6 +1,6 @@
-package models;
+package br.facisa.poo.loja.model;
 
-import utils.Utils;
+import br.facisa.poo.loja.util.Utils;
 
 public class Periferico extends Produto{
 	public Periferico(String nome, Double preco) {

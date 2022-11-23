@@ -1,14 +1,13 @@
-package main;
+package br.facisa.poo.loja;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
-import models.Celular;
-import models.Notebook;
-import models.Produto;
-import utils.Utils;
+import br.facisa.poo.loja.model.Celular;
+import br.facisa.poo.loja.model.Notebook;
+import br.facisa.poo.loja.model.Produto;
+import br.facisa.poo.loja.util.Utils;
 
 public class Loja {
 	private static ArrayList<Produto> produtos;

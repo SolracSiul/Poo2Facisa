@@ -1,4 +1,4 @@
-package utils;
+package br.facisa.poo.loja.util;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
