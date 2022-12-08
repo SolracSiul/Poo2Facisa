@@ -27,7 +27,7 @@ public class SwaggerConfig {
     }
 	 private ApiInfo metaInfo() {
 
-		 	return new ApiInfoBuilder().title("Luis Carlos").description("teste").version("2").license("22").licenseUrl("sorak")
+		 	return new ApiInfoBuilder().title("Luis Carlos").description("API para o cadastro de Produtos").version("1.0.1").license("2022").licenseUrl("crluis521@gmail.com")
 		 			.build();
 	        
 	        
